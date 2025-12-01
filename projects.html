@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Projects - Namratha W.N</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  <style>
+    .project-card {
+      cursor: pointer;
+      margin-bottom: 30px;
+      transition: transform 0.3s;
+    }
+    .project-card:hover {
+      transform: scale(1.05);
+    }
+    .project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .project-card-content {
+      padding: 15px;
+      background-color: #f5f5f5;
+    }
+    .project-card h4 {
+      margin: 0;
+      color: #333;
+    }
+    .modal-body {
+      text-align: justify;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav">
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="projects.html">Projects</a></li>
+                  <li><a href="publications.html">Publications</a></li> 
+                  <li><a href="cv.html">CV</a></li> 
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h2>Projects</h2>
+      </div>
+    </div>
+
+    <!-- Projects List -->
+    <div id="projectsList">
+      <!-- Project 1 -->
+      <div class="row" style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+        <div class="col-md-3">
+          <img src="project1.jpg" alt="Project 1" style="width: 100%; height: auto;">
+        </div>
+        <div class="col-md-5">
+          <h4 style="cursor: pointer; color: #0066cc;" onclick="showProject(1)">Project Title 1</h4>
+          <p>Brief description of your project goes here. Click the title to read more details.</p>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="row" style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+        <div class="col-md-3">
+          <img src="project2.jpg" alt="Project 2" style="width: 100%; height: auto;">
+        </div>
+        <div class="col-md-5">
+          <h4 style="cursor: pointer; color: #0066cc;" onclick="showProject(2)">Project Title 2</h4>
+          <p>Brief description of your project goes here. Click the title to read more details.</p>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="row" style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+        <div class="col-md-3">
+          <img src="project3.jpg" alt="Project 3" style="width: 100%; height: auto;">
+        </div>
+        <div class="col-md-5">
+          <h4 style="cursor: pointer; color: #0066cc;" onclick="showProject(3)">Project Title 3</h4>
+          <p>Brief description of your project goes here. Click the title to read more details.</p>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="row" style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+        <div class="col-md-3">
+          <img src="project4.jpg" alt="Project 4" style="width: 100%; height: auto;">
+        </div>
+        <div class="col-md-5">
+          <h4 style="cursor: pointer; color: #0066cc;" onclick="showProject(4)">Project Title 4</h4>
+          <p>Brief description of your project goes here. Click the title to read more details.</p>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="row" style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+        <div class="col-md-3">
+          <img src="project5.jpg" alt="Project 5" style="width: 100%; height: auto;">
+        </div>
+        <div class="col-md-5">
+          <h4 style="cursor: pointer; color: #0066cc;" onclick="showProject(5)">Project Title 5</h4>
+          <p>Brief description of your project goes here. Click the title to read more details.</p>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="row" style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
+        <div class="col-md-3">
+          <img src="project6.jpg" alt="Project 6" style="width: 100%; height: auto;">
+        </div>
+        <div class="col-md-5">
+          <h4 style="cursor: pointer; color: #0066cc;" onclick="showProject(6)">Project Title 6</h4>
+          <p>Brief description of your project goes here. Click the title to read more details.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Detail View -->
+    <div id="projectDetail" style="display: none; margin-top: 40px; text-align: justify;">
+      <button class="btn btn-default" onclick="backToList()" style="margin-bottom: 20px;">← Back to Projects</button>
+      <div style="background-color: #f5f5f5; padding: 30px; border-radius: 5px;">
+        <h2 id="detailTitle"></h2>
+        <img id="detailImage" src="" alt="" style="width: 100%; max-width: 400px; margin: 20px 0;">
+        <div id="detailContent"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const projectsData = {
+      1: {
+        title: "Project Title 1",
+        image: "project1.jpg",
+        description: "Detailed description of Project 1. Add as much information as you want here including methodology, results, and impact. This is where you can provide comprehensive details about your project."
+      },
+      2: {
+        title: "Project Title 2",
+        image: "project2.jpg",
+        description: "Detailed description of Project 2. Add as much information as you want here including methodology, results, and impact. This is where you can provide comprehensive details about your project."
+      },
+      3: {
+        title: "Project Title 3",
+        image: "project3.jpg",
+        description: "Detailed description of Project 3. Add as much information as you want here including methodology, results, and impact. This is where you can provide comprehensive details about your project."
+      },
+      4: {
+        title: "Project Title 4",
+        image: "project4.jpg",
+        description: "Detailed description of Project 4. Add as much information as you want here including methodology, results, and impact. This is where you can provide comprehensive details about your project."
+      },
+      5: {
+        title: "Project Title 5",
+        image: "project5.jpg",
+        description: "Detailed description of Project 5. Add as much information as you want here including methodology, results, and impact. This is where you can provide comprehensive details about your project."
+      },
+      6: {
+        title: "Project Title 6",
+        image: "project6.jpg",
+        description: "Detailed description of Project 6. Add as much information as you want here including methodology, results, and impact. This is where you can provide comprehensive details about your project."
+      }
+    };
+
+    function showProject(id) {
+      const project = projectsData[id];
+      document.getElementById("projectsList").style.display = "none";
+      document.getElementById("projectDetail").style.display = "block";
+      document.getElementById("detailTitle").textContent = project.title;
+      document.getElementById("detailImage").src = project.image;
+      document.getElementById("detailContent").innerHTML = "<p>" + project.description + "</p>";
+      window.scrollTo(0, 0);
+    }
+
+    function backToList() {
+      document.getElementById("projectsList").style.display = "block";
+      document.getElementById("projectDetail").style.display = "none";
+      window.scrollTo(0, 0);
+    }
+  </script>
+
+  <a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a> 
+</body>
+</html>
