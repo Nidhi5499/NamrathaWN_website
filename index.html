@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <!--
-    Plain-Academic by Vasilios Mavroudis
-    Released under the Simplified BSD License/FreeBSD (2-clause) License.
+    Personal Website W.N
+    Based on Plain-Academic by Vasilios Mavroudis
     https://github.com/mavroudisv/plain-academic
 -->
-
 <html lang="en">
 <head>
-  <title>John Doe</title>
+  <title>Personal Website - W.N</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -34,9 +33,9 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 		  <ul class="nav navbar-nav">
 				  <li><a href="index.html">Home</a></li>
-				  <li><a href="#">Projects</a></li>
-				  <li><a href="#publications">Publications</a></li> 
-				  <li><a href="#">CV</a></li> 
+				  <li><a href="projects.html">Projects</a></li>
+				  <li><a href="publications.html">Publications</a></li> 
+				  <li><a href="cv.html">CV</a></li> 
 		  </ul>
 		</div>
 	  </div>
@@ -47,43 +46,50 @@
 
         <div class="row">
 
-            <!-- Entries Column -->
-            <div class="col-md-8" style="height: 100vh;">
-                
-                <!-- Main Image -->
-                <img class="img-responsive" src="photo.gif" alt=""><br>
+            <!-- Left Column - Name and Bio -->
+            <div class="col-md-6" style="height: 100vh;">
+                <div style="font-family: 'Oswald', sans-serif; font-size: 48px; margin-bottom: 20px;"><b>Namratha W.N</b></div>
                 
                 <div style="margin-top:3%; text-align:justify;">                
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing <a href="#">elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-					
-					<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-					
-					<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing <a href="#">elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    
+                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
                 </div>
             </div> 
 
-            <!-- Contact Info on the Sidebar -->
-            <div class="col-md-4">
-                <div style="font-family: 'Oswald', sans-serif; font-size: 32px;"><b>John Doe</b></div><br>
-                <p><b>john at doe.com</b><br>
-                <p>Random Department<br>
-                University of Randomness<br>
-                Street<br>
-                City <br>
-                Country<br>
+            <!-- Right Column - Photo and Contact Info -->
+            <div class="col-md-6">
+                <!-- Circular Passport Photo -->
+                <img src="photo.jpg" alt="Namratha W.N" style="width: 250px; height: 250px; border-radius: 50%; object-fit: cover; margin-bottom: 15px;">
+                
+                <!-- Contact Info -->
+                <p style="margin-top: 10px; line-height: 1.8;">
+                    Department of Physics and Astronomy<br>
+                    University of Padova<br>
+                    Via Francesco Marzolo, 8<br>
+                    35121 Padova,Italy<br>
+              
                 </p>
+
+                <!-- Social Media Logos -->
+                <div style="margin-top:6px; display:flex; gap:18px; align-items:center;">
+                    <!-- Google Scholar (icon file in project folder) -->
+                    <a href="https://scholar.google.com/citations?user=2jrE5dEAAAAJ&hl=en&authuser=2&oi=ao" target="_blank" rel="noopener" title="Google Scholar">
+                        <img src="google_scholar.png" alt="Google Scholar" style="width:44px;height:44px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 2px 6px rgba(0,0,0,.12);display:block;">
+                    </a>
+
+                    <!-- LinkedIn (icon file in project folder) -->
+                    <a href="https://www.linkedin.com/in/namratha-w-n-47b264176?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BcOhxVxr9TLGnfcIs9%2FLIZA%3D%3D" target="_blank" rel="noopener" title="LinkedIn">
+                        <img src="linkedin.png" alt="LinkedIn" style="width:44px;height:44px;border-radius:50%;background:#fff;padding:6px;box-shadow:0 2px 6px rgba(0,0,0,.12);display:block;">
+                    </a>
+                </div>
             </div>
-            
-            
-            <!-- Links on the Sidebar -->
-            <div class="col-md-4" style="margin-top:2%">
-              <dd><a href="#">Google Scholar</a></dd> 
-              <dd><a href="#">Twitter</a></dd>
-              <dd><a href="#">LinkedIn</a></dd>
-            </div>
-            
-            
-            <!-- Publications -->
+        </div>
+
+        <!-- Publications Section -->
+        <div class="row">
             <div class="col-md-8" style="height: 100vh;">    
                 <h2 id="publications">Publications</h2>
                 
@@ -97,17 +103,38 @@
                 <li class="paper" words="add, your, keywords, here"><a href="#">Full title</a>. Details of the report</li>
                 </ul>
             </div>
-
-            
         </div>
 
+        <!-- Projects Section -->
+        <div class="row">
+            <div class="col-md-8" style="height: 100vh;">    
+                <h2 id="projects">Projects</h2>
+                
+                <ul>
+                <li class="project"><a href="#">Project Title</a> - Project description</li>
+                <li class="project"><a href="#">Project Title</a> - Project description</li>
+                </ul>
+            </div>
+        </div>
 
+        <!-- CV Section -->
+        <div class="row">
+            <div class="col-md-8" style="height: 100vh;">    
+                <h2 id="cv">CV</h2>
+                
+                <p><a href="#">Download CV</a></p>
+                
+                <strong>Education</strong><br/>
+                <ul>
+                <li>Degree - University</li>
+                </ul>
+            </div>
+        </div>
     </div>
     <!-- /.container -->
     
     <!-- Other people may like it too! -->
-    <a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a> 
+    <a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/namrathawn/personal-website-wnn">Personal Website (W.N)</a> 
     
 </body>
-
 </html>
