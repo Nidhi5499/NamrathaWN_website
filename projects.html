@@ -1,203 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Projects - Namratha W.N</title>
+  <title>Projects – Namratha W.N</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap" rel="stylesheet">
+
   <style>
+    /* Page background (soft warm yellow) */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #FFE9A7;
+      min-height: 100vh;
+    }
+
+    /* Particles (subtle amber dots) */
+    #particles {
+      position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1;
+      background: radial-gradient(circle, rgba(243, 156, 18, 0.06) 2px, transparent 2px);
+      background-size: 40px 40px;
+    }
+
+    /* Navigation Bar (amber) */
+    .navbar {
+      background: linear-gradient(90deg, #F39C12, #F5B300, #F39C12);
+      border-radius: 0; margin-bottom: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border: none;
+    }
+    .navbar-inverse .navbar-nav > li > a {
+      font-size: 16px; font-weight: 600; letter-spacing: 0.5px;
+      color: #6B3E0B !important; transition: all 0.3s;
+    }
+    .navbar-inverse .navbar-nav > li > a:hover,
+    .navbar-inverse .navbar-nav > .active > a,
+    .navbar-inverse .navbar-nav > .active > a:hover,
+    .navbar-inverse .navbar-nav > .active > a:focus {
+      color: #FFF6E0 !important; background-color: transparent !important; transform: translateY(-2px);
+    }
+
+    /* Container */
+    .projects-container { max-width: 1200px; margin: auto; padding: 40px 20px; }
+    .projects-container h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 42px; color: #413612; /* teal-darker for heading accent */
+      text-align: center; margin-bottom: 40px;
+    }
+
+    /* Grid */
+    .projects-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 30px;
+    }
+
+    /* Cards remain white for consistency */
     .project-card {
-      cursor: pointer;
-      margin-bottom: 30px;
-      transition: transform 0.3s;
+      position: relative; background: #FFFFFF; border-radius: 14px; overflow: hidden;
+      box-shadow: 0 8px 25px rgba(243, 156, 18, 0.18);
+      border: 2px solid rgba(245, 179, 0, 0.35);
+      transition: all 0.3s ease; cursor: pointer; height: 350px;
     }
     .project-card:hover {
-      transform: scale(1.05);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 35px rgba(243, 156, 18, 0.28);
+      border-color: rgba(245, 179, 0, 0.5);
     }
-    .project-card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+    .project-image { width: 100%; height: 100%; object-fit: cover; }
+
+    /* Title overlay uses teal accent */
+    .project-overlay {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(179, 173, 14, 0.95), rgba(158, 136, 12, 0.75));
+      padding: 25px; transition: all 0.3s ease;
     }
-    .project-card-content {
-      padding: 15px;
-      background-color: #f5f5f5;
+    .project-card:hover .project-overlay {
+      background: linear-gradient(to top, rgba(172, 238, 128, 0.98), rgba(88, 188, 26, 0.85));
     }
-    .project-card h4 {
-      margin: 0;
-      color: #333;
+    .project-title {
+      font-family: 'Oswald', sans-serif; font-size: 24px; font-weight: 600; color: #ffffff; margin: 0 0 6px 0;
     }
-    .modal-body {
-      text-align: justify;
+    .project-status { font-size: 14px; font-style: italic; color: #E9FFF4; margin-bottom: 0; }
+    .project-arrow { display: inline-block; margin-left: 8px; transition: transform 0.3s ease; }
+    .project-card:hover .project-arrow { transform: translateX(5px); }
+
+    @media (max-width: 768px) {
+      .projects-grid { grid-template-columns: 1fr; gap: 20px; }
+      .projects-container { padding: 30px 15px; }
+      .projects-container h1 { font-size: 36px; }
+      .project-card { height: 280px; }
     }
   </style>
 </head>
+
 <body>
 
+<!-- Particle Background -->
+<div id="particles"></div>
+
 <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="projects.html">Projects</a></li>
-                  <li><a href="publications.html">Publications</a></li> 
-                  <li><a href="cv.html">CV</a></li> 
-          </ul>
-        </div>
-      </div>
-    </nav>
-
+<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
   <div class="container">
-    <div class="row">
-      <div class="col-md-8">
-        <h2>Projects</h2>
-      </div>
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+              data-target="#navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
 
-    <!-- Projects List -->
-    <div id="projectsList">
-      <!-- Project 1 -->
-      <div class="row" style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
-        <div class="col-md-3">
-          <img src="project1.jpg" alt="Project 1" style="width: 100%; height: auto;">
-        </div>
-        <div class="col-md-5">
-          <h4 style="cursor: pointer; color: #0066cc;" onclick="showProject(1)">Project Title 1</h4>
-          <p>Brief description of your project goes here. Click the title to read more details.</p>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="row" style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
-        <div class="col-md-3">
-          <img src="project2.jpg" alt="Project 2" style="width: 100%; height: auto;">
-        </div>
-        <div class="col-md-5">
-          <h4 style="cursor: pointer; color: #0066cc;" onclick="showProject(2)">Project Title 2</h4>
-          <p>Brief description of your project goes here. Click the title to read more details.</p>
-        </div>
-      </div>
-
-      <!-- Project 3 -->
-      <div class="row" style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
-        <div class="col-md-3">
-          <img src="project3.jpg" alt="Project 3" style="width: 100%; height: auto;">
-        </div>
-        <div class="col-md-5">
-          <h4 style="cursor: pointer; color: #0066cc;" onclick="showProject(3)">Project Title 3</h4>
-          <p>Brief description of your project goes here. Click the title to read more details.</p>
-        </div>
-      </div>
-
-      <!-- Project 4 -->
-      <div class="row" style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
-        <div class="col-md-3">
-          <img src="project4.jpg" alt="Project 4" style="width: 100%; height: auto;">
-        </div>
-        <div class="col-md-5">
-          <h4 style="cursor: pointer; color: #0066cc;" onclick="showProject(4)">Project Title 4</h4>
-          <p>Brief description of your project goes here. Click the title to read more details.</p>
-        </div>
-      </div>
-
-      <!-- Project 5 -->
-      <div class="row" style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
-        <div class="col-md-3">
-          <img src="project5.jpg" alt="Project 5" style="width: 100%; height: auto;">
-        </div>
-        <div class="col-md-5">
-          <h4 style="cursor: pointer; color: #0066cc;" onclick="showProject(5)">Project Title 5</h4>
-          <p>Brief description of your project goes here. Click the title to read more details.</p>
-        </div>
-      </div>
-
-      <!-- Project 6 -->
-      <div class="row" style="margin-bottom: 30px; border-bottom: 1px solid #ddd; padding-bottom: 20px;">
-        <div class="col-md-3">
-          <img src="project6.jpg" alt="Project 6" style="width: 100%; height: auto;">
-        </div>
-        <div class="col-md-5">
-          <h4 style="cursor: pointer; color: #0066cc;" onclick="showProject(6)">Project Title 6</h4>
-          <p>Brief description of your project goes here. Click the title to read more details.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Project Detail View -->
-    <div id="projectDetail" style="display: none; margin-top: 40px; text-align: justify;">
-      <button class="btn btn-default" onclick="backToList()" style="margin-bottom: 20px;">← Back to Projects</button>
-      <div style="background-color: #f5f5f5; padding: 30px; border-radius: 5px;">
-        <h2 id="detailTitle"></h2>
-        <img id="detailImage" src="" alt="" style="width: 100%; max-width: 400px; margin: 20px 0;">
-        <div id="detailContent"></div>
-      </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li class="active"><a href="projects.html">Projects</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="cv.html">CV</a></li>
+      </ul>
     </div>
   </div>
+</nav>
 
-  <script>
-    const projectsData = {
-      1: {
-        title: "Project Title 1",
-        image: "project1.jpg",
-        description: "Detailed description of Project 1. Add as much information as you want here including methodology, results, and impact. This is where you can provide comprehensive details about your project."
-      },
-      2: {
-        title: "Project Title 2",
-        image: "project2.jpg",
-        description: "Detailed description of Project 2. Add as much information as you want here including methodology, results, and impact. This is where you can provide comprehensive details about your project."
-      },
-      3: {
-        title: "Project Title 3",
-        image: "project3.jpg",
-        description: "Detailed description of Project 3. Add as much information as you want here including methodology, results, and impact. This is where you can provide comprehensive details about your project."
-      },
-      4: {
-        title: "Project Title 4",
-        image: "project4.jpg",
-        description: "Detailed description of Project 4. Add as much information as you want here including methodology, results, and impact. This is where you can provide comprehensive details about your project."
-      },
-      5: {
-        title: "Project Title 5",
-        image: "project5.jpg",
-        description: "Detailed description of Project 5. Add as much information as you want here including methodology, results, and impact. This is where you can provide comprehensive details about your project."
-      },
-      6: {
-        title: "Project Title 6",
-        image: "project6.jpg",
-        description: "Detailed description of Project 6. Add as much information as you want here including methodology, results, and impact. This is where you can provide comprehensive details about your project."
-      }
-    };
+<!-- Projects Content -->
+<div class="projects-container">
+  <h1>Research Projects</h1>
 
-    function showProject(id) {
-      const project = projectsData[id];
-      document.getElementById("projectsList").style.display = "none";
-      document.getElementById("projectDetail").style.display = "block";
-      document.getElementById("detailTitle").textContent = project.title;
-      document.getElementById("detailImage").src = project.image;
-      document.getElementById("detailContent").innerHTML = "<p>" + project.description + "</p>";
-      window.scrollTo(0, 0);
-    }
+  <div class="projects-grid">
+    
+    <!-- Project 1 -->
+    <a href="project1.html" class="project-card">
+      <img src="project1.jpg" alt="Project 1" class="project-image">
+      <div class="project-overlay">
+        <h3 class="project-title">Green Hydrogen Production <span class="project-arrow">→</span></h3>
+        <p class="project-status">Ongoing</p>
+      </div>
+    </a>
 
-    function backToList() {
-      document.getElementById("projectsList").style.display = "block";
-      document.getElementById("projectDetail").style.display = "none";
-      window.scrollTo(0, 0);
-    }
-  </script>
+    <!-- Project 2 -->
+    <a href="project2.html" class="project-card">
+      <img src="project2.jpg" alt="Project 2" class="project-image">
+      <div class="project-overlay">
+        <h3 class="project-title">Photoelectrocatalysis <span class="project-arrow">→</span></h3>
+        <p class="project-status">Ongoing</p>
+      </div>
+    </a>
 
-  <a style="color:#b5bec9;font-size:0.8em; float:right;" href="https://github.com/mavroudisv/plain-academic">Plain Academic</a> 
+    <!-- Project 3 -->
+    <a href="project3.html" class="project-card">
+      <img src="project3.jpg" alt="Project 3" class="project-image">
+      <div class="project-overlay">
+        <h3 class="project-title">Transition-Metal Oxides <span class="project-arrow">→</span></h3>
+      </div>
+    </a>
+
+    <!-- Project 4 -->
+    <a href="project4.html" class="project-card">
+      <img src="project4.jpg" alt="Project 4" class="project-image">
+      <div class="project-overlay">
+        <h3 class="project-title">X-ray Absorption Spectroscopy <span class="project-arrow">→</span></h3>
+      </div>
+    </a>
+
+  </div>
+
+</div>
+
 </body>
 </html>
